@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 
-const orderSchema = new Schema(
+const cartSchema = new Schema(
   {
     user: {
       type: Schema.Types.ObjectId,
@@ -20,21 +20,9 @@ const orderSchema = new Schema(
       type: Schema.Types.Decimal128,
       required: true,
     },
-    free_shipping: {
-      type: Boolean,
-      required: true,
-    },
-    payment_method: {
-      type: String,
-      required: true,
-    },
-    order_status: {
-      type: String, // to be set as pending, confirmed and shipped
-      required: true,
-    },
   },
-  { collation: "orders" }
+  { collection: "carts" }
 );
-const Order = model("Order", orderSchema);
 
-module.exports = Order;
+const Cart = model("Cart", cartSchema);
+module.exports = Cart;
