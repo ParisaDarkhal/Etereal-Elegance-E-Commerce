@@ -10,14 +10,14 @@ const productSchema = new Schema(
     description: {
       type: String,
       required: false,
-      maxlength: 200,
+      maxlength: 250,
     },
     price: {
       type: Schema.Types.Decimal128,
       required: true,
     },
     image: {
-      type: URL,
+      type: Schema.Types.Buffer, // Store the image data as a Buffer
       required: true,
     },
     quantity: {
