@@ -27,6 +27,20 @@ const userSchema = new Schema({
     required: true,
     maxlength: 250,
   },
+  cart: {
+    type: Schema.Types.ObjectId,
+    ref: "Cart",
+  },
+  order: {
+    type: Schema.Types.ObjectId,
+    ref: "Order",
+  },
+  review: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Review",
+    },
+  ],
 });
 
 //hash password before saving

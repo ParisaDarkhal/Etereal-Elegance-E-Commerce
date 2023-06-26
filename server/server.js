@@ -1,5 +1,5 @@
 const express = require("express");
-const { ApolloServer } = require("apollo-server");
+const { ApolloServer } = require("@apollo/server");
 const path = require("path");
 
 // mongoose connector
