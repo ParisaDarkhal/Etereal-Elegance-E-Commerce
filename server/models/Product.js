@@ -36,7 +36,7 @@ const productSchema = new Schema(
       },
     ],
   },
-  { collection: "users" }
+  { collection: "products" }
 );
 
 const Product = model("Product", productSchema);

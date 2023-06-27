@@ -80,11 +80,30 @@ const typeDefs = gql`
 
   }
 
-  type Mutation {}
+  type Mutation {
+    addUser(input: UserInput): User
+    deleteUser(userId: ID!): User
+    updatedUser(userId: ID!, input: UserInput): User
+    addProduct(input: ProductInput): Product
+  }
 
-  input UserInput {}
+  input UserInput {
+    first_name: String!
+    last_name: String!
+    email: String!
+    password: String!
+    address: String!
+  }
 
-  input ProductInput {}
+  input ProductInput {
+    name:String!
+    description: String!
+    price: Schema.Types.Decimal128!
+    image: Schema.Types.Buffer!
+    quantity: Number!
+    category: ID
+    review: ID
+  }
 
 `;
 module.exports = typeDefs;

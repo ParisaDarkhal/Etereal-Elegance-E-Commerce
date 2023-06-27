@@ -181,7 +181,57 @@ const resolvers = {
     },
   },
 
-  Mutation: {},
+  Mutation: {
+    // Add a user
+    addUser: async (parent, { input }) => {
+      try {
+        const user = await User.create(input);
+        console.log(user);
+        return user;
+      } catch (error) {
+        throw new Error("Failed to add user.");
+      }
+    },
+
+    // Delete a user
+    deleteUser: async (parent, { userId }) => {
+      try {
+        const deletedUser = await User.findByIdAndDelete(userId);
+        if (!deletedUser) {
+          throw new Error("User not found!");
+        }
+        return deletedUser;
+      } catch (error) {
+        throw new Error("Failed to delete user.");
+      }
+    },
+
+    // Update a user
+    updateUser: async (parent, { userId, input }) => {
+      try {
+        const updatedUser = await User.findByIdAndUpdate(userId, input, {
+          new: true,
+        });
+        if (!updatedUser) {
+          throw new Error("User not found!");
+        }
+        return updatedUser;
+      } catch (error) {
+        throw new Error("Failed to update user.");
+      }
+    },
+
+    // Add a product
+    addProduct: async (parent, { input }) => {
+      try {
+        const product = await Product.create(input);
+        console.log(product);
+        return product;
+      } catch (error) {
+        throw new Error("Failed to add product.");
+      }
+    },
+  },
 };
 
 module.exports = resolvers;
