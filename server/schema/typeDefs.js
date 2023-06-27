@@ -65,6 +65,18 @@ const typeDefs = gql`
     user(userId: ID) : User
     products: [Product]
     product(productId: ID) : Product
+    productsByCategory(categoryId: ID) : [Product]
+    orders: [Order]
+    order(orderId: ID) : Order
+    ordersByUser(userId: ID) : Order
+    cart(cartId: ID) : Cart
+    cartsByUser(userId: ID) : Cart
+    categories: [Category]
+    category(categoryId: ID) : Category
+    categoryByProduct(productId: ID): Category
+    reviews: [Review]
+    reviewsByProduct(productId: ID): Review
+    reviewsByStarRating(starRating: Number): [Review]
 
   }
 

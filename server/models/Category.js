@@ -10,6 +10,7 @@ const categorySchema = new Schema(
       type: String,
       maxlength: 250,
     },
+    product: [{ type: Schema.Types.ObjectId, ref: "Product" }],
   },
   { collection: "categories" }
 );
