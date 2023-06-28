@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+import { Schema, model } from "mongoose";
 
 const orderSchema = new Schema(
   {
@@ -33,8 +33,11 @@ const orderSchema = new Schema(
       required: true,
     },
   },
-  { collation: "orders" }
+  {
+    collation: "orders",
+    timestamps: true, // Add timestamps for createdAt and updatedAt
+  }
 );
 const Order = model("Order", orderSchema);
 
-module.exports = Order;
+export default Order;

@@ -1,5 +1,6 @@
-const { Schema, model } = require("mongoose");
-const bcrypt = require("bcrypt");
+import { Schema, model } from "mongoose";
+
+import bcrypt from "bcrypt";
 
 const userSchema = new Schema({
   first_name: {
@@ -8,6 +9,11 @@ const userSchema = new Schema({
     required: true,
   },
   last_name: {
+    type: String,
+    trim: true,
+    required: true,
+  },
+  username: {
     type: String,
     trim: true,
     required: true,
@@ -43,7 +49,7 @@ const userSchema = new Schema({
   ],
 });
 
-//hash password before saving
+// hash password before saving
 userSchema.pre("save", async function (next) {
   try {
     if (!this.isModified("password")) {
@@ -63,4 +69,4 @@ userSchema.pre("save", async function (next) {
 });
 
 const User = model("User", userSchema);
-module.exports = User;
+export default User;
