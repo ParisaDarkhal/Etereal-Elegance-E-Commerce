@@ -6,13 +6,13 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "cd server && npm i && cd ../client && npm i",
-    "dev": "concurrently \"cd server && nodemon server.js\" \"cd client && npm start\"",
-    "develop": "concurrently \"cd server && nodemon server.js\" \"cd client && npm start\"",
-    "start": "cd client && npm run build && cd ../server && node server.js",
-    "build": "cd client && npm run build",
+    "install": "cd server && npm i && cd ../frontend && npm i",
+    "dev": "concurrently \"cd server && nodemon server.js\" \"cd frontend && npm start\"",
+    "develop": "concurrently \"cd server && nodemon server.js\" \"cd frontend && npm start\"",
+    "start": "cd frontend && npm run build && cd ../server && node server.js",
+    "build": "cd frontend && npm run build",
     "server": "cd server && nodemon server.js",
-    "client": "cd client && npm start"
+    "frontend": "cd frontend && npm start"
   },
   "author": "Parisa Darkhal",
   "license": "ISC",
