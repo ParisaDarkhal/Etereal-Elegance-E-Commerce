@@ -27,7 +27,7 @@ const resolvers = {
     },
 
     // find a user by usernama and password
-    userbByUsername: async (parent, { username, password }) => {
+    userByUsername: async (parent, { username, password }) => {
       try {
         const user = await User.findOne({ username });
         if (!user) {

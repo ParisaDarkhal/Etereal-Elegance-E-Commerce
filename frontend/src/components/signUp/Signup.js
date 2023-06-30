@@ -16,6 +16,7 @@ import { useMutation } from "@apollo/client";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ADD_USER } from "../../utils/mutations";
+import Navbar from "../navbar/Navbar";
 
 function Copyright(props) {
   return (
@@ -85,10 +86,13 @@ export default function SignUp() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
+      <Navbar />
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
+          boxShadow={5}
           sx={{
+            paddingX: 3,
             marginTop: 2,
             display: "flex",
             flexDirection: "column",

@@ -11,9 +11,16 @@ import {
   Box,
   Typography,
   Container,
+  Snackbar,
+  Alert,
 } from "@mui/material";
 import { LockOutlined as LockOutlinedIcon } from "@mui/icons-material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useQuery, useMutation, gql } from "@apollo/client";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { USER_BY_USERNAME } from "../../utils/queries";
+import Navbar from "../navbar/Navbar";
 
 function Copyright(props) {
   return (
@@ -41,21 +48,48 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignIn() {
+  const navigate = useNavigate();
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [open, setOpen] = useState(false);
+
+  const { loading, error, data } = useQuery(USER_BY_USERNAME, {
+    variables: { username, password },
+  });
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+
+    if (data) {
+      const user = data.userByUsername;
+      setOpen(false);
+      if (user.id) {
+        navigate("/");
+      }
+    }
+    setOpen(true);
+    setUsername("");
+    setPassword("");
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
   };
 
   return (
     <ThemeProvider theme={defaultTheme}>
+      <Navbar />
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
+          boxShadow={5}
           sx={{
+            padding: 3,
             marginTop: 8,
             display: "flex",
             flexDirection: "column",
@@ -83,6 +117,8 @@ export default function SignIn() {
               name="username"
               autoComplete="username"
               autoFocus
+              value={username}
+              onChange={(event) => setUsername(event.target.value)}
             />
             <TextField
               margin="normal"
@@ -93,6 +129,8 @@ export default function SignIn() {
               type="password"
               id="password"
               autoComplete="current-password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -107,11 +145,6 @@ export default function SignIn() {
               Sign In
             </Button>
             <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
               <Grid item>
                 <Link href="/" variant="body2">
                   {"Don't have an account? Sign Up"}
@@ -120,6 +153,11 @@ export default function SignIn() {
             </Grid>
           </Box>
         </Box>
+        <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="error" sx={{ width: "100%" }}>
+            Invalid Credentials!
+          </Alert>
+        </Snackbar>
         <Copyright sx={{ mt: 4, mb: 4 }} />
       </Container>
     </ThemeProvider>
