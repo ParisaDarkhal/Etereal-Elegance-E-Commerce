@@ -12,7 +12,8 @@
     "start": "cd frontend && npm run build && cd ../server && node server.js",
     "build": "cd frontend && npm run build",
     "server": "cd server && nodemon server.js",
-    "frontend": "cd frontend && npm start"
+    "frontend": "cd frontend && npm start",
+    "seed": "cd server && node seed/seed.js"
   },
   "author": "Parisa Darkhal",
   "license": "ISC",

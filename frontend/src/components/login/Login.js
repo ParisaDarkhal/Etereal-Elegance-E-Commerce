@@ -16,10 +16,9 @@ import {
 } from "@mui/material";
 import { LockOutlined as LockOutlinedIcon } from "@mui/icons-material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useQuery, useMutation, gql } from "@apollo/client";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { USER_BY_USERNAME } from "../../utils/queries";
+import { useAuth } from "../../hooks/Auth";
 import Navbar from "../navbar/Navbar";
 
 function Copyright(props) {
@@ -53,24 +52,21 @@ export default function SignIn() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [open, setOpen] = useState(false);
+  const { user, isAuthenticated, login } = useAuth();
+  console.log("user :>> ", user);
+  if (user) {
+    navigate("/dashboard");
+  }
 
-  const { loading, error, data } = useQuery(USER_BY_USERNAME, {
-    variables: { username, password },
-  });
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (data) {
-      const user = data.userByUsername;
-      setOpen(false);
-      if (user.id) {
-        navigate("/");
-      }
+    await login(username, password);
+    if (!user) {
+      setOpen(true);
+      setUsername("");
+      setPassword("");
     }
-    setOpen(true);
-    setUsername("");
-    setPassword("");
   };
 
   const handleClose = (event, reason) => {
@@ -146,7 +142,7 @@ export default function SignIn() {
             </Button>
             <Grid container>
               <Grid item>
-                <Link href="/" variant="body2">
+                <Link href="/signup" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

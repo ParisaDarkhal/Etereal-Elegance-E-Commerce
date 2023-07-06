@@ -27,33 +27,33 @@ const resolvers = {
     },
 
     // find a user by usernama and password
-    userByUsername: async (parent, { username, password }) => {
+    // userByUsername: async (parent, { username, password }) => {
+    //   try {
+    //     const user = await User.findOne({ username });
+    //     if (!user) {
+    //       throw new Error("Invalid Credentials!");
+    //     }
+    //     // verify password
+    //     const isPasswordValid = await bcrypt.compare(password, user.password);
+    //     if (!isPasswordValid) {
+    //       throw new Error("Invalid Credentials!");
+    //     }
+    //     return user;
+    //   } catch (erroer) {
+    //     throw new Error("Failed to fetch user.");
+    //   }
+    // },
+    // find all products
+    products: async () => {
       try {
-        const user = await User.findOne({ username });
-        if (!user) {
-          throw new Error("Invalid Credentials!");
-        }
-        // verify password
-        const isPasswordValid = await bcrypt.compare(password, user.password);
-        if (!isPasswordValid) {
-          throw new Error("Invalid Credentials!");
-        }
-        return user;
-      } catch (erroer) {
-        throw new Error("Failed to fetch user.");
+        const products = await Product.find();
+        return products;
+      } catch (error) {
+        console.error("Error fetching products:", error);
+        throw new Error("Failed to fetch products.");
       }
     },
   },
-
-  //   // find all products
-  //   products: async () => {
-  //     try {
-  //       const products = await Product.find();
-  //       return products;
-  //     } catch (error) {
-  //       throw new Error("Failed to fetch products.");
-  //     }
-  //   },
 
   //   // find a product by id
   //   product: async (parent, { productId }) => {
@@ -238,6 +238,25 @@ const resolvers = {
         return updatedUser;
       } catch (error) {
         throw new Error("Failed to update user.");
+      }
+    },
+
+    // find a user by usernama and password
+    loginMutation: async (parent, { username, password }) => {
+      try {
+        const user = await User.findOne({ username });
+        console.log("userinMutation :>> ", user);
+        if (!user) {
+          throw new Error("Invalid Credentials!");
+        }
+        // verify password
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+        if (!isPasswordValid) {
+          throw new Error("Invalid Credentials!");
+        }
+        return user;
+      } catch (erroer) {
+        throw new Error("Failed to fetch user.");
       }
     },
 

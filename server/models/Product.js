@@ -9,15 +9,15 @@ const productSchema = new Schema(
     },
     description: {
       type: String,
+      trim: true,
       required: false,
-      maxlength: 250,
     },
     price: {
-      type: Schema.Types.Decimal128,
+      type: Number,
       required: true,
     },
     image: {
-      type: Schema.Types.Buffer, // Store the image data as a Buffer
+      type: String, // Store the image data as a Buffer
       required: true,
     },
     quantity: {
@@ -25,16 +25,16 @@ const productSchema = new Schema(
       required: true,
     },
 
-    category: {
-      type: Schema.Types.ObjectId,
-      ref: "Category",
-    },
-    review: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Review",
-      },
-    ],
+    // category: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: "Category",
+    // },
+    // review: [
+    //   {
+    //     type: Schema.Types.ObjectId,
+    //     ref: "Review",
+    //   },
+    // ],
   },
   { collection: "products" }
 );

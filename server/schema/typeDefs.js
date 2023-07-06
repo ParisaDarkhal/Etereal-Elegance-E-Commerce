@@ -10,17 +10,26 @@ const typeDefs = gql`
     password: String!
     address: String!
   }
+  type Product {
+    id: ID!
+    name: String!
+    description: String
+    price: Float!
+    image: String!
+    quantity: Int!
+  }
 
   type Query {
     users: [User]
     user(userId: ID): User
-    userByUsername(username: String!, password: String!): User
+    products: [Product]
   }
 
   type Mutation {
     addUser(input: UserInput): User
     deleteUser(userId: ID!): User
     updateUser(userId: ID!, input: UserInput): User
+    loginMutation(username: String!, password: String!): User
   }
 
   input UserInput {

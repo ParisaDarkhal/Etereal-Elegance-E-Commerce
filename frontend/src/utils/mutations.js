@@ -7,3 +7,14 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const LOGIN_MUTATION = gql`
+  mutation loginMutation($username: String!, $password: String!) {
+    loginMutation(username: $username, password: $password) {
+      id
+      first_name
+      last_name
+      username
+    }
+  }
+`;
