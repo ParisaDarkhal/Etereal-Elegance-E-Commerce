@@ -28,6 +28,12 @@
   color: #61dafb;
 }
 
+.toolbarContainer {
+  display: "flex";
+  align-items: "center";
+  justify-content: "space-between";
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

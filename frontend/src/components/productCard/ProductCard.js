@@ -14,6 +14,7 @@ export default function ProductCard({
   name,
   description,
   price,
+  onAddToCart,
 }) {
   return (
     <Card sx={{ maxWidth: 400 }}>
@@ -35,6 +36,7 @@ export default function ProductCard({
           target="_blank"
           size="small"
           endIcon={<AddCircleIcon />}
+          onClick={() => onAddToCart(id)}
         >
           Add to cart
         </Button>

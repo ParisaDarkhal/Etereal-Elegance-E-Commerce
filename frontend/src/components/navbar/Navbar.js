@@ -6,13 +6,34 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import Badge from "@mui/material/Badge";
+import { styled } from "@mui/material/styles";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useAuth } from "../../hooks/Auth";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import CartContext from "../dashboard/CartContext";
+import { useNavigate } from "react-router-dom";
+
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  "& .MuiBadge-badge": {
+    right: -1,
+    top: 0,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: "0 4px",
+  },
+}));
 
 export default function Navbar() {
   const { user, isAuthenticated, login, logout } = useAuth();
   const [username, setUsername] = useState(""); // State for username
   const [password, setPassword] = useState(""); // State for password
+  const cartItems = useContext(CartContext);
+
+  const navigate = useNavigate();
+
+  if (!user) {
+    navigate("/login");
+  }
 
   const handleLogin = () => {
     login(username, password);
@@ -23,8 +44,8 @@ export default function Navbar() {
   };
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="sticky">
-        <Toolbar>
+      <AppBar position="fixed">
+        <Toolbar sx={{ flexGrow: 1, display: { xs: "flex", md: "flex" } }}>
           <IconButton
             size="large"
             edge="start"
@@ -40,8 +61,22 @@ export default function Navbar() {
           <Box>
             {isAuthenticated ? (
               <div>
-                <p>Welcome, {user.first_name}!</p>
-                <Button href="/" color="inherit" onClick={handleLogout}>
+                <IconButton aria-label="cart">
+                  <StyledBadge
+                    badgeContent={cartItems ? cartItems.length : 0}
+                    color="secondary"
+                    sx={{ mr: 2 }}
+                  >
+                    <ShoppingCartIcon style={{ color: "white" }} />
+                  </StyledBadge>
+                </IconButton>
+                <span>Welcome, {user.first_name}!</span>
+                <Button
+                  sx={{ ml: 5 }}
+                  href="/"
+                  color="inherit"
+                  onClick={handleLogout}
+                >
                   Log out
                 </Button>
               </div>
