@@ -11,7 +11,7 @@ import { styled } from "@mui/material/styles";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useAuth } from "../../hooks/Auth";
 import { useState, useContext } from "react";
-import CartContext from "../dashboard/CartContext";
+import { CartContext } from "../dashboard/CartContext";
 import { useNavigate } from "react-router-dom";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -27,7 +27,7 @@ export default function Navbar() {
   const { user, isAuthenticated, login, logout } = useAuth();
   const [username, setUsername] = useState(""); // State for username
   const [password, setPassword] = useState(""); // State for password
-  const cartItems = useContext(CartContext);
+  const { cartItems } = useContext(CartContext);
 
   const navigate = useNavigate();
 
@@ -41,6 +41,11 @@ export default function Navbar() {
 
   const handleLogout = () => {
     logout();
+  };
+
+  const handleShoppingCartClick = () => {
+    console.log("object");
+    navigate("/cart");
   };
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -61,7 +66,7 @@ export default function Navbar() {
           <Box>
             {isAuthenticated ? (
               <div>
-                <IconButton aria-label="cart">
+                <IconButton aria-label="cart" onClick={handleShoppingCartClick}>
                   <StyledBadge
                     badgeContent={cartItems ? cartItems.length : 0}
                     color="secondary"

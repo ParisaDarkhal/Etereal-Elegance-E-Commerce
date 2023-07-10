@@ -9,7 +9,6 @@ import Navbar from "../navbar/Navbar";
 export default function Home() {
   /////
   const { loading, error, data } = useQuery(GET_PRODUCTS);
-  console.log("data :>> ", data);
 
   if (loading) {
     return <p>Loading...</p>;
@@ -36,7 +35,7 @@ export default function Home() {
               <Grid item xs={12} sm={6} md={4} key={index}>
                 <ProductCard
                   id={item.id}
-                  imageUrl={item.image}
+                  imageurl={item.image}
                   name={item.name}
                   description={item.description}
                   price={item.price}

@@ -11,6 +11,7 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
+import CartProvider from "./components/dashboard/CartContext";
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
@@ -27,7 +28,9 @@ root.render(
     <BrowserRouter>
       <ApolloProvider client={client}>
         <AuthProvider>
-          <App />
+          <CartProvider>
+            <App />
+          </CartProvider>
         </AuthProvider>
       </ApolloProvider>
     </BrowserRouter>

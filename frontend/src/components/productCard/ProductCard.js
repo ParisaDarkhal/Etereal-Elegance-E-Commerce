@@ -10,7 +10,7 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 
 export default function ProductCard({
   id,
-  imageUrl,
+  imageurl,
   name,
   description,
   price,
@@ -18,7 +18,7 @@ export default function ProductCard({
 }) {
   return (
     <Card sx={{ maxWidth: 400 }}>
-      <CardMedia component="img" height="200" image={imageUrl} />
+      <CardMedia component="img" height="200" image={imageurl} />
       <CardContent>
         <Typography gutterBottom variant="h5">
           {name}

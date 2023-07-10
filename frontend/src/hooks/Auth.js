@@ -59,7 +59,6 @@ export const AuthProvider = ({ children }) => {
     /* store user data and isAuthenticated state in storage */
     localStorage.setItem("user", JSON.stringify(user));
     localStorage.setItem("isAuthenticated", JSON.stringify(isAuthenticated));
-    console.log("userrrrrrrrrrrrrrrr :>> ", user);
   }, [user, isAuthenticated]);
 
   // Logout function

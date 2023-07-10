@@ -23,6 +23,7 @@ const typeDefs = gql`
     users: [User]
     user(userId: ID): User
     products: [Product]
+    product(productId: ID): Product
   }
 
   type Mutation {

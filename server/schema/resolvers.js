@@ -53,21 +53,20 @@ const resolvers = {
         throw new Error("Failed to fetch products.");
       }
     },
+
+    //   // find a product by id
+    product: async (parent, { productId }) => {
+      try {
+        const product = await Product.findById(productId);
+        if (!product) {
+          throw new Error("Product not found.");
+        }
+        return product;
+      } catch (error) {
+        throw new Error("Failed to fetch product by ID.");
+      }
+    },
   },
-
-  //   // find a product by id
-  //   product: async (parent, { productId }) => {
-  //     try {
-  //       const product = await Product.findById(productId);
-  //       if (!product) {
-  //         throw new Error("Product not found.");
-  //       }
-  //       return product;
-  //     } catch (error) {
-  //       throw new Error("Failed to fetch product by ID.");
-  //     }
-  //   },
-
   //   // Retrieve all products by category
   //   productsByCategory: async (parent, { categoryId }) => {
   //     try {
