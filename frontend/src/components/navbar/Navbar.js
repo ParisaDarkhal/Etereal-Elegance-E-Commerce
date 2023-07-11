@@ -56,8 +56,19 @@ export default function Navbar() {
           >
             <MenuIcon />
           </IconButton>
+
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Ethernal Elegance
+            <Button
+              href="/"
+              style={{
+                color: "#fff",
+                fontSize: 25,
+                textTransform: "capitalize",
+              }}
+            >
+              {" "}
+              Ethernal Elegance
+            </Button>
           </Typography>
           <Box>
             {isAuthenticated ? (
