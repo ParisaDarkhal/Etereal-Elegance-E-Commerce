@@ -15,6 +15,7 @@ export const LOGIN_MUTATION = gql`
       first_name
       last_name
       username
+      address
     }
   }
 `;
