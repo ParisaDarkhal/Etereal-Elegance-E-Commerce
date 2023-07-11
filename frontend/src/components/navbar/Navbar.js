@@ -31,10 +31,6 @@ export default function Navbar() {
 
   const navigate = useNavigate();
 
-  if (!user) {
-    navigate("/login");
-  }
-
   const handleLogin = () => {
     login(username, password);
   };

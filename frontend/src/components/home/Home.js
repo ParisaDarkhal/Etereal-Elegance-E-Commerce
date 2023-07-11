@@ -5,9 +5,13 @@ import { useQuery } from "@apollo/client";
 import { GET_PRODUCTS } from "../../utils/queries";
 import Navbar from "../navbar/Navbar";
 
+import { useNavigate } from "react-router-dom";
+
 // main component
 export default function Home() {
   /////
+
+  const navigate = useNavigate();
   const { loading, error, data } = useQuery(GET_PRODUCTS);
 
   if (loading) {
@@ -19,6 +23,11 @@ export default function Home() {
   }
 
   const products = data.products;
+
+  const handleAddToCart = () => {
+    navigate("/login");
+    return;
+  };
 
   return (
     <Box>
@@ -39,6 +48,7 @@ export default function Home() {
                   name={item.name}
                   description={item.description}
                   price={item.price}
+                  onAddToCart={handleAddToCart}
                 />
               </Grid>
             ))}
