@@ -33,7 +33,7 @@ const Dashboard = () => {
       <Navbar />
 
       <Box id="products" mt={5}>
-        <Box padding={5} margin="auto">
+        <Box padding={10} margin="auto">
           <Typography variant="h3" gutterBottom>
             products
           </Typography>

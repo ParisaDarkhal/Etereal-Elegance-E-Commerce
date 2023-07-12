@@ -22,10 +22,12 @@ console.log("jsonData :>> ", jsonData);
 const seedDatabase = async () => {
   try {
     //connect to database
-    await mongoose.connect("mongodb://localhost:27017/eternalElegance_db", {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    // await mongoose.connect("mongodb://localhost:27017/eternalElegance_db", {
+    await mongoose.connect(process.env.MONGODB_URI),
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      };
     // insert the items into the database
     await Product.insertMany(items);
     console.log("data seeded successfully!");
@@ -36,5 +38,5 @@ const seedDatabase = async () => {
   }
 };
 
-seedDatabase();
-// export default seedDatabase;
+// seedDatabase();
+export default seedDatabase;

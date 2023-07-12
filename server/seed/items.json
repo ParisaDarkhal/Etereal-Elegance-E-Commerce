@@ -12,5 +12,12 @@
     "price": 14.99,
     "image": "https://media.istockphoto.com/id/1209614212/photo/jewellery-set-of-hearts-shape-rose-gold-ring-and-stud-earrings-on-pink-background.jpg?s=612x612&w=0&k=20&c=r2eZGq9cdkdsk-C5RqNIWag7YKlJOtYbJUu3JvYy954=",
     "quantity": 5
+  },
+  {
+    "name": "Brecelet",
+    "description": "Silver",
+    "price": 19.99,
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS0PV6Z6nkyQUKlrrKMpPcbcdHfbCt9xmGtZuEuZuKR4N7UrM1vw_iViPlLIKIlYaO-6v9SV_ynSEEZvWRZD2pPAJ18XMtoNgAImZrtLNlRkr6iMcNRUTaBNg",
+    "quantity": 5
   }
 ]

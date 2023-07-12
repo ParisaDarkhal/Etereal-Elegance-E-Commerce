@@ -1,84 +1,71 @@
-# E-commerce website
+# Eternal Elegance
 
-## Description:
+Eternal Elegance is an e-commerce website for jewelry. The project was created to improve skills in MongoDB, GraphQL, React, Material UI, and other technologies.
 
-Build a complete e-commerce website using React, Node.js, MongoDB, and Stripe. The website should allow users to browse products, add items to their cart, proceed to checkout, and make payments using Stripe's payment gateway.
+## Features
 
-## Use Cases:
+- Landing Page: Displays products and allows users to add items to their cart.
+- Login Page: Users are directed here when attempting to access the cart without being logged in. New users can also navigate to the sign-up page.
+- Sign-Up Page: Allows users to create a new account.
+- Dashboard: After logging in, users can view products and add them to their cart.
+- Cart: Users can view the products they have chosen and remove items or continue shopping.
+- Checkout: Users can enter address and payment details and complete their purchase. An order confirmation number is displayed at the end.
 
-- **User Registration and Authentication:** Implement a user registration and login system to allow users to create accounts and securely log in.
-- **Product Listing:** Display a catalog of products with details such as name, description, price, and product images.
-- **Shopping Cart:** Enable users to add products to their shopping cart, update quantities, and remove items.
-- **Checkout Process:** Implement a multi-step checkout process, including shipping information, payment details, and order summary.
-- **Payment Integration:** Integrate Stripe for secure payment processing, allowing users to make payments using credit/debit cards.
+## Demo
 
-# Getting Started with Create React App
+![Eternal Elegance](../Ethereal-Elegance-E-Commerce/frontend/public/assets/1.jpg)
+![Eternal Elegance](../Ethereal-Elegance-E-Commerce/frontend/public/assets/2.jpg)
+![Eternal Elegance](../Ethereal-Elegance-E-Commerce/frontend/public/assets/3.jpg)
+![Eternal Elegance](../Ethereal-Elegance-E-Commerce/frontend/public/assets/4.jpg)
+![Eternal Elegance](../Ethereal-Elegance-E-Commerce/frontend/public/assets/5.jpg)
+![Eternal Elegance](../Ethereal-Elegance-E-Commerce/frontend/public/assets/6.jpg)
+![Eternal Elegance](../Ethereal-Elegance-E-Commerce/frontend/public/assets/7.jpg)
+![Eternal Elegance](../Ethereal-Elegance-E-Commerce/frontend/public/assets/8.jpg)
+![Eternal Elegance](../Ethereal-Elegance-E-Commerce/frontend/public/assets/9.jpg)
+![Eternal Elegance](../Ethereal-Elegance-E-Commerce/frontend/public/assets/10.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Demo Video
 
-## Available Scripts
+[Watch the Video](https://drive.google.com/file/d/1HJAMCQEFgOJoFVgDxBUExRcK1U4KhvPK/view)
 
-In the project directory, you can run:
+## Technologies and NPM Packages Used
 
-### `npm start`
+- Apollo Server: A GraphQL server implementation.
+- Bcrypt: Library for hashing passwords.
+- Express: Web application framework for Node.js.
+- Mongoose: MongoDB object modeling for Node.js.
+- Apollo Client: GraphQL client for making queries and mutations from the client side.
+- React: JavaScript library for building user interfaces.
+- React DOM: Library for rendering React components in the browser.
+- React Router DOM: Library for routing in React applications.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the repository:
 
-### `npm test`
+```shell
+git clone https://github.com/your-username/Eternal-elegance.git
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Install the dependencies:
 
-### `npm run build`
+```shell
+cd Eternal-elegance
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Start the development server:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```shell
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the application.
 
-### `npm run eject`
+## License
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```

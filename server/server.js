@@ -7,7 +7,8 @@ import http from "http";
 import cors from "cors";
 import bodyParser from "body-parser";
 import { typeDefs, resolvers } from "./schema/index.js";
-import items from "./seed/items.json" assert { type: "json" };
+import "dotenv/config";
+// import items from "./seed/items.json" assert { type: "json" };
 // import seeds from "./seed/seed.js";
 
 // mongoose connector

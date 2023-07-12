@@ -67,7 +67,7 @@ export default function Navbar() {
               }}
             >
               {" "}
-              Ethernal Elegance
+              Eternal Elegance
             </Button>
           </Typography>
           <Box>
