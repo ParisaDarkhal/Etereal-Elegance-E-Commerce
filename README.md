@@ -13,16 +13,16 @@ Eternal Elegance is an e-commerce website for jewelry. The project was created t
 
 ## Demo
 
-![Eternal Elegance](../Etereal-Elegance-E-Commerce/frontend/public/assets/1.jpg)
-![Eternal Elegance](../Etereal-Elegance-E-Commerce/frontend/public/assets/2.jpg)
-![Eternal Elegance](../Etereal-Elegance-E-Commerce/frontend/public/assets/3.jpg)
-![Eternal Elegance](../Etereal-Elegance-E-Commerce/frontend/public/assets/4.jpg)
-![Eternal Elegance](../Etereal-Elegance-E-Commerce/frontend/public/assets/5.jpg)
-![Eternal Elegance](../Etereal-Elegance-E-Commerce/frontend/public/assets/6.jpg)
-![Eternal Elegance](../Etereal-Elegance-E-Commerce/frontend/public/assets/7.jpg)
-![Eternal Elegance](../Etereal-Elegance-E-Commerce/frontend/public/assets/8.jpg)
-![Eternal Elegance](../Etereal-Elegance-E-Commerce/frontend/public/assets/9.jpg)
-![Eternal Elegance](../Etereal-Elegance-E-Commerce/frontend/public/assets/10.png)
+![Eternal Elegance](./assets/1.jpg)
+![Eternal Elegance](./assets/2.jpg)
+![Eternal Elegance](./assets/3.jpg)
+![Eternal Elegance](./assets/4.jpg)
+![Eternal Elegance](./assets/5.jpg)
+![Eternal Elegance](./assets/6.jpg)
+![Eternal Elegance](./assets/7.jpg)
+![Eternal Elegance](./assets/8.jpg)
+![Eternal Elegance](./assets/9.jpg)
+![Eternal Elegance](./assets/10.png)
 
 ## Demo Video
 
