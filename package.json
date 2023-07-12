@@ -9,8 +9,7 @@
     "install": "cd server && npm i && cd ../frontend && npm i",
     "dev": "concurrently \"cd server && nodemon server.js\" \"cd frontend && npm start\"",
     "develop": "concurrently \"cd server && nodemon server.js\" \"cd frontend && npm start\"",
-    "start": "cd frontend && npm run build && cd ../server && node server.js",
-    "build": "cd frontend && npm run build",
+    "build": "cd frontend && npm run build && cd ../server && node server.js",
     "server": "cd server && nodemon server.js",
     "frontend": "cd frontend && npm start",
     "seed": "cd server && node seed/seed.js"
