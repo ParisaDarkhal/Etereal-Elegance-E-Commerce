@@ -205,7 +205,6 @@ const resolvers = {
     addUser: async (parent, { input }) => {
       try {
         const user = await User.create(input);
-        console.log(user);
         return user;
       } catch (error) {
         throw new Error("Failed to add user.");
@@ -244,7 +243,6 @@ const resolvers = {
     loginMutation: async (parent, { username, password }) => {
       try {
         const user = await User.findOne({ username });
-        console.log("userinMutation :>> ", user);
         if (!user) {
           throw new Error("Invalid Credentials!");
         }

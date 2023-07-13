@@ -9,8 +9,6 @@ import { useNavigate } from "react-router-dom";
 
 // main component
 export default function Home() {
-  /////
-
   const navigate = useNavigate();
   const { loading, error, data } = useQuery(GET_PRODUCTS);
 

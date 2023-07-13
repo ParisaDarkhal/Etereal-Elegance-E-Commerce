@@ -13,11 +13,10 @@ import {
 } from "@apollo/client";
 import CartProvider from "./components/dashboard/CartContext";
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: process.env.REACT_APP_BACKEND_URL + "/graphql",
 });
 
 const client = new ApolloClient({
-  // uri: "http://127.0.0.1:3001/graphql", //only for local testing
   link: httpLink,
   cache: new InMemoryCache(),
 });
