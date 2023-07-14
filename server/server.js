@@ -36,7 +36,7 @@ const __dirname = dirname(__filename);
 
     app.use(
       "/graphql",
-      cors({ origin: "*" }),
+      cors({ origin: "https://eternal-elegance-app.vercel.app" }),
       bodyParser.json(),
       expressMiddleware(server)
     );
