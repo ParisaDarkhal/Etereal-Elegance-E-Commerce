@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/cors.js": {
+      "runtime": "nodejs14.x"
+    }
+  }
+}
