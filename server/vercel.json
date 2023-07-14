@@ -1,7 +1,15 @@
 {
-  "functions": {
-    "api/cors.js": {
-      "runtime": "nodejs14.x"
+  "version": 2,
+  "builds": [
+    {
+      "src": "*.js",
+      "use": "@vercel/node"
     }
-  }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
 }

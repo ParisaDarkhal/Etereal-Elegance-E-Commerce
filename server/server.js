@@ -34,7 +34,12 @@ const __dirname = dirname(__filename);
     });
     await server.start();
 
-    app.use("/graphql", cors(), bodyParser.json(), expressMiddleware(server));
+    app.use(
+      "/graphql",
+      cors({ origin: "*" }),
+      bodyParser.json(),
+      expressMiddleware(server)
+    );
 
     httpServer.listen(PORT, () => {
       console.log(`🚀 Server ready at http://localhost:${PORT}/graphql`);
